@@ -1,0 +1,192 @@
+$bg-color: #181719;
+$white: #fff;
+$large-mobile: 425px;
+$small-mobile: 320px;
+// Reseting the browser default css
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Montserrat, "Arial";
+  color: $white;
+}
+
+body {
+  background: $bg-color;
+  header {
+    width: 90%;
+    margin: 2% auto;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .nav-brand {
+        flex: 1;
+        h2 {
+          border: 1px solid $white;
+          width: 35%;
+          font-weight: lighter;
+          text-transform: uppercase;
+          font-family: "Crimson Pro";
+          text-align: center;
+          font-size: 1rem;
+          @media (max-width: $large-mobile) {
+            width: 100%;
+            font-size: 0.42rem;
+            padding: 4%;
+            margin: 3% 0 0 0;
+          }
+        }
+      }
+      .nav-links {
+        flex: 1;
+        @media (max-width: $large-mobile) {
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-start;
+        }
+        .nav-icon {
+          display: none;
+          @media (max-width: $large-mobile) {
+            display: inline;
+            font-size: 2rem;
+            position: relative;
+            z-index: 200;
+          }
+        }
+
+        ul {
+          display: flex;
+          justify-content: space-evenly;
+          li {
+            list-style: none;
+            padding: 0 0 2% 0;
+            &:nth-child(4n-3) {
+              border-bottom: 1px solid $white;
+            }
+            a {
+              text-decoration: none;
+            }
+          }
+          @media (max-width: $large-mobile) {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            width: 70%;
+            background: $bg-color;
+            align-items: center;
+            height: 100vh;
+            z-index: 100;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+  main {
+    margin: 5% auto;
+    section {
+      width: 90%;
+      margin: 2% auto;
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: $large-mobile) {
+        flex-direction: column;
+        width: 95%;
+        gap: 1rem 0;
+      }
+      .hero-intro {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem 0;
+        h4 {
+          font-size: 2rem;
+          font-family: "Lora";
+        }
+        .read {
+          font-weight: lighter;
+          font-size: 0.8rem;
+          position: relative;
+          .icon {
+            font-size: 1rem;
+            position: absolute;
+            top: 10%;
+            left: 20%;
+            @media (max-width: $large-mobile) {
+              left: 25%;
+            }
+          }
+        }
+      }
+      .hero {
+        flex: 1;
+        position: relative;
+        @media (max-width: $large-mobile) {
+          min-height: 20rem;
+        }
+        .suite {
+          display: block;
+          max-width: 30rem;
+          @media (max-width: $large-mobile) {
+            max-width: 100%;
+            margin: 0 auto;
+          }
+        }
+        .card {
+          position: absolute;
+          z-index: 50;
+          bottom: -20%;
+          left: 20%;
+          background: $bg-color;
+          border: 1px solid $bg-color;
+          border-radius: 2px;
+          @media (max-width: $large-mobile) {
+            min-width: 70%;
+            bottom: -5%;
+            left: 15%;
+          }
+          @media (max-width: $small-mobile) {
+          }
+          div {
+            display: flex;
+            justify-content: space-around;
+            gap: 0 2rem;
+            padding: 4%;
+            @media (max-width: $large-mobile) {
+              padding: 3%;
+              gap: 0 0;
+            }
+            img {
+              max-width: 5rem;
+              height: 5rem;
+              border-radius: 50%;
+              display: block;
+            }
+            div {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              justify-self: flex-start;
+              @media (max-width: $large-mobile) {
+                gap: 1rem 0;
+              }
+            }
+          }
+          p {
+            margin-top: 5%;
+            font-family: "Lora";
+            font-weight: bolder;
+            margin-left: 5%;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    text-align: center;
+    margin: 10% auto;
+    opacity: 0.3;
+  }
+}
